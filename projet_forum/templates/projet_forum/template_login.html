@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<p><h1>Page de Login</h1></p>
+<h2>Se connecter avec un compte existant</h2>
+<form method="POST" action="/auth/">
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+    </table>
+    <p><input type="submit" value="Envoyer"/></p>
+</form>
+<h2>Creer un compte</h2>
+<form method="POST" action="/creer_compte/">
+    {% csrf_token %}
+    <table>
+        {{form2.as_table}}
+    </table>
+    <p><input type="submit" value="Envoyer"/></p>
+</form>
+</body>
+</html>

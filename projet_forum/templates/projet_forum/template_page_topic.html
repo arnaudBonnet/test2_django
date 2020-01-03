@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page topic</title>
+</head>
+<body>
+<table>
+{% for message in liste_messages_topic %}
+    <tr><td style="border: 1px solid black">{{message.auteur}}</td>
+        <td style="border: 1px solid black">{{message.message}}</td></tr>
+{% endfor %}
+</table>
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+        {{form.as_table}}
+        </table>
+        <input type="submit" value="Envoyer message"/>
+    </form>
+</body>
+</html>

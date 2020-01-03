@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste topic</title>
+</head>
+<body>
+<table>
+{% for topic in liste_topic %}
+    <tr><td><a href="/topic/{{topic.id}}/">{{topic.nom}}</a></td>
+        <td><a href="/suppress_topic/{{topic.id}}/">Supprimer</a></td></tr>
+{% endfor %}
+</table>
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Créer topic" />
+</form>
+</body>
+</html>

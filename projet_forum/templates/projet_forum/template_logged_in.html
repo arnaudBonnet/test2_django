@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vous êtes actuellement connecté !</title>
+</head>
+<body>
+<h1>Vous êtes actuellement connecté sous le nom de : {{name}}</h1>
+<a href="/list_topics/">Accéder à la liste des topics.</a>
+<form method="POST" action="/logout/">
+    {% csrf_token %}
+    <input type="submit" value="Se déconnecter"/>
+</form>
+</body>
+</html>
